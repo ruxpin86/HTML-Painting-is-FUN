@@ -16,6 +16,10 @@ function draw(event) {
     return;
   }
   console.log(event);
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(event.offsetX, event.offsetY);
+  ctx.stroke();
 }
 
 canvas.addEventListener("mousemove", draw);
