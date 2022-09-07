@@ -8,3 +8,11 @@ ctx.lineJoin = "round";
 ctx.lineCap = "round";
 
 let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+
+function draw(event) {
+  console.log(event);
+}
+
+canvas.addEventListener("mousemove", draw);
