@@ -12,6 +12,7 @@ let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 let hue = 0;
+let direction = true;
 
 function draw(event) {
   if (!isDrawing) {
@@ -30,6 +31,15 @@ function draw(event) {
   //reset hue value so it logs correctly in the console, not continuously incrementing
   if (hue >= 360) {
     hue = 0;
+  }
+
+  if (ctx.lineWidth >= 30 || ctx.lineWidth <= 1) {
+    direction = !direction;
+  }
+  if (direction) {
+    ctx.lineWidth++;
+  } else {
+    ctx.lineWidth--;
   }
 }
 
