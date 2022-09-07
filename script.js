@@ -25,7 +25,12 @@ function draw(event) {
   ctx.stroke();
   lastX = event.offsetX;
   lastY = event.offsetY;
+
   hue++;
+  //reset hue value so it logs correctly in the console, not continuously incrementing
+  if (hue >= 360) {
+    hue = 0;
+  }
 }
 
 canvas.addEventListener("mousedown", (event) => {
